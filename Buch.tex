@@ -1,4 +1,9 @@
-\documentclass{book}
+\documentclass[a4paper, 12pt]{book}
+
+\usepackage[paperwidth=22.3cm, paperheight=22.3cm, asymmetric, twoside,
+bindingoffset=0.76cm, inner=1.27cm, outer=1.27cm, top=1.27cm,
+bottom=1.27cm, marginparwidth=0cm,noheadfoot, nomarginpar]{geometry}
+
 \PassOptionsToPackage{unicode}{hyperref}
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
@@ -8,6 +13,345 @@
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 \usepackage[T1]{fontenc}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pagecolor}
+\usepackage{anyfontsize}
+\usepackage[most]{tcolorbox}
+\usepackage[german]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{xparse}
+\usepackage{listofitems}
+\usepackage[symbol*]{footmisc}
+\usepackage[colorlinks=true,urlcolor=.,linkcolor=.]{hyperref}
+\usepackage{imakeidx}
+
+\makeindex[title={Index}]
+
+% page numbers...
+\tcbset{on line,
+        boxsep=4pt, left=0pt, right=0pt, top=0pt, bottom=0pt,
+        colframe=orange!50, colback=orange, highlight math style={enhanced}}
+\fancypagestyle{plain}{
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[EC,OC]{
+\raisebox{\height}{
+% \tcbox{\;\textcolor{white}{\thepage}\;}}
+ \thepage
+}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\pagestyle{plain}
+
+\pagecolor{white}
+
+% fonts...
+\usepackage[sfdefault]{roboto}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Roboto}
+\setsansfont[Mapping=tex-text]{Roboto}
+\setmonofont[Mapping=tex-text, Scale=1]{Courier New Bold}
+\newfontfamily\titlefont[Mapping=tex-text]{Roboto}
+\newfontfamily\sectiontitlefont[Mapping=tex-text]{Roboto}
+
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\setmathfont{Fira Math}
+\setmathfont[range=up]{Roboto}
+\setmathfont[range=it]{Roboto-Italic}
+\setmathfont[range=\int]{Fira Math}
+
+% paragraphs...
+
+\parskip5pt
+\parindent0pt
+
+% for images...
+
+\ExplSyntaxOn
+\NewDocumentCommand{\aspectratio}{smo}
+ {% #2 is the image file
+  \hbox_set:Nn \l_tmpa_box {\includegraphics{#2}}
+  \IfNoValueTF{#3}
+   {
+    \__student_aspectratio:nn { \box_wd:N \l_tmpa_box } { \box_ht:N \l_tmpa_box }
+   }
+   {
+    \IfBooleanTF{#1}{ \tl_gset:Nx } { \tl_set:Nx } #3
+     {
+      \__student_aspectratio:nn { \box_wd:N \l_tmpa_box } { \box_ht:N \l_tmpa_box }
+     }
+   }
+ }
+
+\cs_new:Nn \__student_aspectratio:nn
+ {
+  \fp_eval:n {round( #1 / #2 , 5)}
+ }
+\ExplSyntaxOff
+
+% templates...
+
+\newsavebox{\storytext}
+
+\newcommand{\PhotoTextC}[3]{ % centered photo+text: image, text, page bgcolor
+\savebox{\storytext}{\parbox[b]{\textwidth}{#2}}
+\begin{center}
+% Compute height (subtract another 20pt to make sure that the text fits, this is hardcoded, FIXME):
+\includegraphics[height={\dimexpr\textheight-\ht\storytext-20pt\relax}]{#1}
+
+#2
+\end{center}
+\pagecolor{#3}
+\newpage
+\pagecolor{white}
+} % \PhotoTextC
+
+\newcommand{\PhotoTextJ}[4]{ % justified photo+text: photo width, image, text, page bgcolor
+\begin{center}
+ \includegraphics[width=#1\linewidth]{#2}
+\end{center}
+
+#3
+\pagecolor{#4}
+\newpage
+\pagecolor{white}
+} % \PhotoTextJ
+
+\newcommand{\TextJPhoto}[4]{ % justified text+photo: text, photo width, image, page bgcolor
+#1
+
+\begin{center}
+ \includegraphics[width=#2\linewidth]{#3}
+\end{center}
+
+\pagecolor{#4}
+\newpage
+\pagecolor{white}
+} % \TextJPhoto
+
+
+
+\newcommand{\PhotoTextJPhoto}[6]{ % justified photo+text+photo: photo width, image, text, photo width, image, page bgcolor
+\begin{center}
+ \includegraphics[width=#1\linewidth]{#2}
+\end{center}
+
+#3
+
+\begin{center}
+ \includegraphics[width=#4\linewidth]{#5}
+\end{center}
+\pagecolor{#6}
+\newpage
+\pagecolor{white}
+} % \PhotoTextJPhoto
+
+
+\newcommand{\PhotoTextCPhoto}[6]{ % centered photo+text+photo: photo width, image, text, photo width, image, page bgcolor
+\begin{center}
+ \includegraphics[width=#1\linewidth]{#2}
+
+#3
+
+ \includegraphics[width=#4\linewidth]{#5}
+\end{center}
+\pagecolor{#6}
+\newpage
+\pagecolor{white}
+} % \PhotoTextCPhoto
+
+
+\newcommand{\TextCTwoColumnsPhotoText}[5]{ % toptext, column1 image, text1, column2 image, text2
+\begin{center}
+#1
+\end{center}
+\begin{multicols}{2}
+\includegraphics[width=\columnwidth]{#2}
+
+#3
+\vfill\null
+\columnbreak
+
+\null\vfill
+\includegraphics[width=\columnwidth]{#4}
+
+#5
+\vfill\null
+\end{multicols}
+\newpage
+} % \TextCTwoColumnsPhotoText
+
+
+\newcommand{\TwoColumnsPhotoTextPhoto}[6]{ % column1a image, text1, column1b, column2a image, text2, column2b image
+\begin{multicols}{2}
+\includegraphics[width=\columnwidth]{#1}
+
+#2
+
+\includegraphics[width=\columnwidth]{#3}
+\vfill\null
+\columnbreak
+\includegraphics[width=\columnwidth]{#4}
+
+#5
+
+\includegraphics[width=\columnwidth]{#6}
+\vfill\null
+\end{multicols}
+\newpage
+} % \TwoColumnsPhotoTextPhoto
+
+
+
+\newcommand{\TextCThreeColumnsPhotoTextPhotoEight}[9]{
+% toptext, column1a image, text1, column1b image, column2a image, text2, (no column2b image!) column3a image, text3, column3b image
+\begin{center}
+#1
+\end{center}
+\begin{multicols}{3}
+\null\vfill
+\includegraphics[width=\columnwidth]{#2}
+
+#3
+
+\includegraphics[width=\columnwidth]{#4}
+\vfill\null
+\columnbreak
+
+\null\vfill
+\includegraphics[width=\columnwidth]{#5}
+
+#6
+
+\vfill\null
+\columnbreak
+
+\null\vfill
+\includegraphics[width=\columnwidth]{#7}
+
+#8
+
+\includegraphics[width=\columnwidth]{#9}
+\vfill\null
+\end{multicols}
+\newpage
+} % \TextCThreeColumnsPhotoTextPhotoEight
+
+\newcommand{\TextCThreeColumnsPhotoTextPhoto}[1]{
+% toptext, column1a image, text1, column1b image, column2a image, text2, column2b image, column3a image, text3, column3b image
+\setsepchar{;}
+\readlist\arg{#1}
+\begin{center}
+\arg[1]
+\end{center}
+\begin{multicols}{3}
+\includegraphics[width=\columnwidth]{\arg[2]}
+
+\arg[3]
+
+\includegraphics[width=\columnwidth]{\arg[4]}
+%\columnbreak
+\includegraphics[width=\columnwidth]{\arg[5]}
+
+\arg[6]
+
+\includegraphics[width=\columnwidth]{\arg[7]}
+%\columnbreak
+\includegraphics[width=\columnwidth]{\arg[8]}
+
+\arg[9]
+
+\includegraphics[width=\columnwidth]{\arg[10]}
+\end{multicols}
+\newpage
+} % \TextCThreeColumnsPhotoTextPhoto
+
+
+
+\newcommand{\PhotoTextLR}[3]{% side, image, text
+\aspectratio*{#2}[\imageaspectratio]
+{
+\begin{wrapfigure}{#1}{\imageaspectratio\textwidth}
+  \begin{center}
+    \includegraphics[height=0.92\textheight]{#2} % this is hardcoded. The picture should be a bit less than height=1.
+  \end{center}
+\end{wrapfigure}
+#3
+
+}
+\newpage
+} % \PhotoTextLR
+
+
+\newcommand{\PhotoTextLRSmall}[4]{% side, image width, image, text
+{
+\begin{wrapfigure}{#1}{#2\textwidth}
+  \begin{center}
+    \includegraphics[width=#2\textwidth]{#3}
+  \end{center}
+\end{wrapfigure}
+#4
+
+}
+\newpage
+} % \PhotoTextLRSmall
+
+\newcommand{\PhotoTextPhotoLRSmall}[8]{% side, image width, image, text1, side, image width, image, text2
+{
+\begin{wrapfigure}{#1}{#2\textwidth}
+  \begin{center}
+    \includegraphics[width=#2\textwidth]{#3}
+  \end{center}
+\end{wrapfigure}
+
+#4
+
+}
+{
+
+\begin{wrapfigure}{#5}{#6\textwidth}
+  \begin{center}
+    \includegraphics[width=#6\textwidth]{#7}
+  \end{center}
+\end{wrapfigure}
+
+#8
+
+}
+\newpage
+} % \PhotoTextPhotoLRSmall
+
+
+\newcommand{\PhotoTextPhotoCaptionLRSmall}[9]{% side, image width, image, text1, side, image width, image, caption, text2
+{
+\begin{wrapfigure}{#1}{#2\textwidth}
+  \begin{center}
+    \includegraphics[width=#2\textwidth]{#3}
+  \end{center}
+\end{wrapfigure}
+
+#4
+
+}
+{
+
+\begin{wrapfigure}{#5}{#6\textwidth}
+  \begin{center}
+    \includegraphics[width=#6\textwidth]{#7}
+    \caption{#8}
+  \end{center}
+\end{wrapfigure}
+
+#9
+
+}
+\newpage
+} % \PhotoTextPhotoLRSmall
 
 \begin{document}
 
