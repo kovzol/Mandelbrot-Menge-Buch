@@ -8,7 +8,7 @@ bottom=1.27cm, marginparwidth=0cm,noheadfoot, nomarginpar]{geometry}
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \usepackage{graphicx}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 \usepackage[T1]{fontenc}
@@ -368,7 +368,9 @@ Die Folge \(\left( z_{n} \right)\) mit der Bildungsvorschrift
 eine Konvergenz. Auch hier kann der Sachverhalt mit Hilfe des GeoGebra
 Applets veranschaulicht werden.
 
-\includegraphics[width=\linewidth]{image9.png}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{image9.png}
+\end{center}
 
 % \protect\hypertarget{_Toc167901654}{}{}Abbildung 4: Veranschaulichung
 % der Folge \(z_{n + 1} = z_{n}^{2}\) mit \(z_{0} = 0\) mittels
@@ -380,26 +382,27 @@ Diese Darstellung lässt vermuten, dass die Folge
 erkennen ist. Diese Vermutung muss nun untersucht werden. Betrachtet man
 zunächst die ersten Folgenglieder:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0600}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9400}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\[z_{0} = 0\]
+%\begin{tabular}{SSSSSSSS} \toprule
+%    {$m$} & {$\Re\{\underline{\mathfrak{X}}(m)\}$} & {$-\Im\{\underline{\mathfrak{X}}(m)\}$} & {$\mathfrak{X}(m)$} & {$\frac{\mathfrak{X}(m)}{23}$} & {$A_m$} & {$\varphi(m)\ /\ ^{\circ}$} & {$\varphi_m\ /\ ^{\circ}$} \\ \midrule
+%    1  & 16.128 & +8.872 & 16.128 & 1.402 & 1.373 & -146.6 & -137.6 \\
+%    2  & 3.442  & -2.509 & 3.442  & 0.299 & 0.343 & 133.2  & 152.4  \\
+%    3  & 1.826  & -0.363 & 1.826  & 0.159 & 0.119 & 168.5  & -161.1 \\
+%    4  & 0.993  & -0.429 & 0.993  & 0.086 & 0.08  & 25.6   & 90     \\ \midrule
+%    5  & 1.29   & +0.099 & 1.29   & 0.112 & 0.097 & -175.6 & -114.7 \\
+%    6  & 0.483  & -0.183 & 0.483  & 0.042 & 0.063 & 22.3   & 122.5  \\
+%    7  & 0.766  & -0.475 & 0.766  & 0.067 & 0.039 & 141.6  & -122   \\
+%    8  & 0.624  & +0.365 & 0.624  & 0.054 & 0.04  & -35.7  & 90     \\ \midrule
+%    9  & 0.641  & -0.466 & 0.641  & 0.056 & 0.045 & 133.3  & -106.3 \\
+%    10 & 0.45   & +0.421 & 0.45   & 0.039 & 0.034 & -69.4  & 110.9  \\
+%    11 & 0.598  & -0.597 & 0.598  & 0.052 & 0.025 & 92.3   & -109.3 \\ \bottomrule
+%\end{tabular}
 
-\[z_{1} = 0^{2} + 0 = 0 + 0 = 0\]
-
-\[z_{2} = 0^{2} + 0 = 0 + 0 = 0\]
-
-\[z_{3} = 0^{2} + 0 = 0 + 0 = 0\]
-
-...
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+\begin{align*}
+z_{0} &= 0 \\
+z_{1} &= 0^{2} + 0 = 0 + 0 = 0\\
+z_{2} &= 0^{2} + 0 = 0 + 0 = 0\\
+z_{3} &= 0^{2} + 0 = 0 + 0 = 0
+\end{align*}
 
 Wie anhand der ersten Folgenglieder erkennbar ist, wird nur der Wert 0
 angenommen, die Folge konvergiert also gegen 0. Dieses Beispiel ist
@@ -417,7 +420,9 @@ Bildungsvorschrift \(z_{n + 1} = z_{n}^{2} + c\) mit
 \(z_{0} =  - 1\). Diese wird mittels eines GeoGebra Applets
 veranschaulicht.
 
-\includegraphics[width=\linewidth]{image10.png}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{image10.png}
+\end{center}
 
 % \protect\hypertarget{_Toc167901655}{}{}Abbildung 5: Darstellung der
 % Folge \(z_{n + 1} = z_{n}^{2}–1\) mit \(z_{0} =  - 1\)
@@ -430,35 +435,17 @@ die bildliche Darstellung allein aber nicht ausreicht, muss diese
 Vermutung nun genauer untersucht werden. Betrachtet man zunächst die
 ersten Folgenglieder:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0561}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.8745}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0694}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\[z_{0} =  - 1\]
-
-\[z_{1} = ( - 1)^{2} - 1 = 1 - 1 = 0\]
-
-\[z_{2} = 0^{2} - 1 = 0 - 1 =  - 1\]
-
-\[z_{3} = ( - 1)^{2} - 1 = 1 - 1 = 0\]
-
-\[z_{4} = 0^{2} - 1 = 0 - 1 =  - 1\]
-
-\[z_{5} = ( - 1)^{2} - 1 = 1 - 1 = 0\]
-
-...
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+\begin{align*}
+z_{0} &=  - 1 \\
+z_{1} &= ( - 1)^{2} - 1 = 1 - 1 = 0 \\
+z_{2} &= 0^{2} - 1 = 0 - 1 =  - 1 \\
+z_{3} &= ( - 1)^{2} - 1 = 1 - 1 = 0 \\
+z_{4} &= 0^{2} - 1 = 0 - 1 =  - 1 \\
+z_{5} &= ( - 1)^{2} - 1 = 1 - 1 = 0
+\end{align*}
 
 Betrachtet man die ersten Folgenglieder, so ist eindeutig erkennbar,
-dass die Folge abwechselnd die beiden Werte 0 und \(-\)1 annimmt. Sie
+dass die Folge abwechselnd die beiden Werte 0 und \(-1\) annimmt. Sie
 ist somit divergent.
 
 Wie dieses Beispiel zeigt, kann die Mandelbrot-Menge nicht nur zur
@@ -474,7 +461,9 @@ Ein weniger triviales Beispiel für eine konvergente Folge ist
 \(c = 0.25\), der Startwert ist dabei \(z_{0} = 0.25\). Auch
 diese Folge wird mit einem GeoGebra Applet visualisiert.
 
-\includegraphics[width=\linewidth]{image11.png}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{image11.png}
+\end{center}
 
 % \protect\hypertarget{_Toc167901656}{}{}Abbildung 6: Visualisierung der
 % Folge \(z_{n + 1} = z_{n}^{2} + 0.25\) mit \(z_{0} = 0.25\)
@@ -484,32 +473,20 @@ Diese Darstellung lässt vermuten, dass die Folge
 \(\left( z_{n} \right)\) für \(z_{0} = 0.25\) konvergent ist, auch
 wenn der Grenzwert \(a\) nicht direkt abgelesen werden kann.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0236}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9514}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0250}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Beweis:}
 
 Betrachtet man zunächst die ersten Folgenglieder:
 
-\[z_{0} = 0.25\]
-
-\[z_{1} = {0.25}^{2} + 0.25 = 0.0625 + 0.25 = 0.3125\]
-
-\[z_{2} = {0.3125}^{2} + 0.25 = 0.3476...\]
-
-\[z_{3} = {0.3476...}^{2} + 0.25 = 0.3708...\]
-
-\[z_{4} = {0.3708...}^{2} + 0.25 = 0.3875...\]
-
-\[z_{5} = {0.3875...}^{2} + 0.25 = 0.4001...\]
-
-\[z_{6} = {0.4001...}^{2} + 0.25 = 0.4101...\]
-
+\begin{align*}
+z_{0} &= 0.25\\
+z_{1} &= {0.25}^{2} + 0.25 = 0.0625 + 0.25 = 0.3125\\
+z_{2} &= {0.3125}^{2} + 0.25 = 0.3476...\\
+z_{3} &= {0.3476...}^{2} + 0.25 = 0.3708...\\
+z_{4} &= {0.3708...}^{2} + 0.25 = 0.3875...\\
+z_{5} &= {0.3875...}^{2} + 0.25 = 0.4001...\\
+z_{6} &= {0.4001...}^{2} + 0.25 = 0.4101...\\
 ...
+\end{align*}
 
 Diese Werte lassen keine eindeutige Vermutung über das Konvergenz- oder
 Divergenzverhalten zu, da die Folge monoton steigend zu seien scheint.
@@ -599,14 +576,7 @@ Also ist die Folge \(z_{n}\) beschränkt durch 0.5.
 Aus der Monotonie und der Beschränktheit der Folge \(z_{n}\) folgt also,
 dass \(a = 0.5\) wirklich der Grenzwert der Folge \(z_{n}\) ist.
 \end{quote}
-
-\[\blacksquare\]
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+\hfill\blacksquare
 
 Eine Visualisierung dieses Beispiels zeigt die Konvergenz besonders
 schön, da der Verlauf der Folgenglieder gut zu sehen ist. Die Konvergenz
@@ -620,7 +590,9 @@ Ein weniger einfaches Beispiel für eine konvergente Folge ist
 \(z_{0} =  - 0.5\). Auch diese Folge kann mit einem GeoGebra Applet
 veranschaulicht werden.
 
-\includegraphics[width=\linewidth]{image12.png}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{image12.png}
+\end{center}
 
 % \protect\hypertarget{_Toc167901657}{}{}Abbildung 7: Visualisierung der
 % Folge \(z_{n + 1} = z_{n}^{2} - 0.5\) mit \(z_{0} =  - 0.5\)
@@ -629,32 +601,18 @@ veranschaulicht werden.
 Diese Abbildung legt die Vermutung nahe, dass die Folge konvergent ist
 und der Grenzwert \(a\) zwischen \(-\)0.5 und \(-\)0.25 liegt.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0559}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.8750}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0691}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Beweis:}
 
 Betrachtet man zunächst die ersten Folgenglieder:
 
-\[z_{0} =  - 0.5\]
-
-\[z_{1} = ( - {0.5)}^{2} - 0.5 = 0.25 - 0.5 =  - 0.25\]
-
-\[z_{2} = ( - {0.25)}^{2} - 0.5 =  - 0.4375\]
-
-\[z_{3} = {( - 0.4375)}^{2} - 0.5 =  - 0.3085...\]
-
-\[z_{4} = {( - 0.3085...)}^{2} - 0.5 =  - 0.4047...\]
-
-\[z_{5} = {( - 0.4047...)}^{2} - 0.5 =  - 0.3361...\]
-
-\[z_{6} = {( - 0.3361...)}^{2} - 0.5 =  - 0.3869...\]
-
-...
+\begin{align*}
+z_{0} &=  - 0.5\\
+z_{1} &= ( - {0.5)}^{2} - 0.5 = 0.25 - 0.5 =  - 0.25\\
+z_{2} &= ( - {0.25)}^{2} - 0.5 =  - 0.4375\\
+z_{3} &= {( - 0.4375)}^{2} - 0.5 =  - 0.3085...\\
+z_{4} &= {( - 0.3085...)}^{2} - 0.5 =  - 0.4047...\\
+z_{5} &= {( - 0.4047...)}^{2} - 0.5 =  - 0.3361...\\
+z_{6} &= {( - 0.3361...)}^{2} - 0.5 =  - 0.3869...
+\end{align*}
 
 Diese Werte liegen zwischen \(-\)0.5 und \(-\)0.25 und scheinen sich
 einem Wert zwischen diesen beiden anzunähern, wobei die Werte für
@@ -689,17 +647,14 @@ Seien \(x_{n}\) und \(y_{n}\) Teilfolgen von \(z_{n}\), wobei
 
 Betrachten wir die Folge \(x_{n}\).
 
-\[x_{0} = z_{0} =  - 0.5\]
-
-\[x_{1}{= z}_{2} = {z_{1}}^{2} - 0.5 = ({z_{0}}^{2} - 0.5)^{2} - 0.5 = {x_{0}}^{4} - {x_{0}}^{2} - 0.25\]
-
-\[x_{2} = z_{4} = {z_{3}}^{2} - 0.5 = ({z_{2}}^{2} - 0.5)^{2} - 0.5 = {x_{1}}^{4} - {x_{1}}^{2} - 0.25\]
-
-\[x_{3} = z_{6} = {z_{5}}^{2} - 0.5 = ({z_{4}}^{2} - 0.5)^{2} - 0.5 = {x_{2}}^{4} - {x_{2}}^{2} - 0.25\]
-
-...
-
-\[x_{n + 1} = {x_{n}}^{4} - {x_{n}}^{2} - 0.25\]
+\begin{align*}
+x_{0} &= z_{0} =  - 0.5\\
+x_{1} &= z_{2} = {z_{1}}^{2} - 0.5 = ({z_{0}}^{2} - 0.5)^{2} - 0.5 = {x_{0}}^{4} - {x_{0}}^{2} - 0.25\\
+x_{2} &= z_{4} = {z_{3}}^{2} - 0.5 = ({z_{2}}^{2} - 0.5)^{2} - 0.5 = {x_{1}}^{4} - {x_{1}}^{2} - 0.25\\
+x_{3} &= z_{6} = {z_{5}}^{2} - 0.5 = ({z_{4}}^{2} - 0.5)^{2} - 0.5 = {x_{2}}^{4} - {x_{2}}^{2} - 0.25\\
+... &\\
+x_{n + 1} &= {x_{n}}^{4} - {x_{n}}^{2} - 0.25
+\end{align*}
 
 Um Konvergenz der Folge \(x_{n}\) beweisen zu können, müssen wir zeigen,
 dass \(x_{n}\) sowohl beschränkt als auch monoton im Intervall
@@ -910,17 +865,14 @@ werden.
 
 Betrachten wir die Folge \(y_{n}\).
 
-\[y_{0} = z_{1} =  - 0.25\]
-
-\[y_{1}{= z}_{3} = {z_{2}}^{2} - 0.5 = ({z_{1}}^{2} - 0.5)^{2} - 0.5 = {y_{0}}^{4} - {y_{0}}^{2} - 0.25\]
-
-\[y_{2} = z_{5} = {z_{4}}^{2} - 0.5 = ({z_{3}}^{2} - 0.5)^{2} - 0.5 = {y_{1}}^{4} - {y_{1}}^{2} - 0.25\]
-
-\[y_{3} = z_{7} = {z_{6}}^{2} - 0.5 = ({z_{6}}^{2} - 0.5)^{2} - 0.5 = {y_{2}}^{4} - {y_{2}}^{2} - 0.25\]
-
-...
-
-\[y_{n + 1} = {y_{n}}^{4} - {y_{n}}^{2} - 0.25\]
+\begin{align*}
+y_{0} &= z_{1} =  - 0.25\\
+y_{1} &= z_{3} = {z_{2}}^{2} - 0.5 = ({z_{1}}^{2} - 0.5)^{2} - 0.5 = {y_{0}}^{4} - {y_{0}}^{2} - 0.25\\
+y_{2} &= z_{5} = {z_{4}}^{2} - 0.5 = ({z_{3}}^{2} - 0.5)^{2} - 0.5 = {y_{1}}^{4} - {y_{1}}^{2} - 0.25\\
+y_{3} &= z_{7} = {z_{6}}^{2} - 0.5 = ({z_{6}}^{2} - 0.5)^{2} - 0.5 = {y_{2}}^{4} - {y_{2}}^{2} - 0.25\\
+...\\
+y_{n + 1} = {y_{n}}^{4} - {y_{n}}^{2} - 0.25
+\end{align*}
 
 Die Konvergenz der Folge \(y_{n}\) im Intervall
 \(- 0.5{\leq y}_{n} \leq  - 0.25\) beweisen wir, indem wir,
@@ -934,14 +886,7 @@ werden und ist dabei \(a = \frac{1 - \sqrt{3}}{2}\).
 Beide Teilfolgen \(x_{n}\) und \(y_{n}\) von \(z_{n}\) konvergieren also
 gegen denselben Wert. Folglich ist die gesamte Folge \(z_{n}\)
 konvergent gegen diesen Grenzwert \(a = \frac{1 - \sqrt{3}}{2}\).
-
-\[\blacksquare\]
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+\hfill\blacksquare
 
 Dieses Beispiel ist nicht trivial und benötigt für den Beweis ein
 tieferes Verständnis der Mathematik und weiterreichende Konzepte als die
@@ -957,30 +902,19 @@ Bildungsvorschrift \(z_{n + 1} = z_{n}^{2} + c\) mit
 \(n \in \mathbb{N}_{0}\) und \(c = 1\), der Startwert ist dabei
 \(z_{0} = 1\).
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0561}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.8747}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0692}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Beweis:}
 
 Betrachtet man zunächst die ersten Folgenglieder:
 
-\[z_{0} = 1\]
-
-\[z_{1} = 1^{2} + 1 = 1 + 1 = 2\]
-
-\[z_{2} = 2^{2} + 1 = 5\]
-
-\[z_{3} = 5^{2} + 1 = 26\]
-
-\[z_{4} = 26^{2} + 1 = 677\]
-
-\[z_{5} = 677^{2} + 1 = 458330\]
-
+\begin{align*}
+z_{0} &= 1\\
+z_{1} &= 1^{2} + 1 = 1 + 1 = 2\\
+z_{2} &= 2^{2} + 1 = 5\\
+z_{3} &= 5^{2} + 1 = 26\\
+z_{4} &= 26^{2} + 1 = 677\\
+z_{5} &= 677^{2} + 1 = 458330\\
 ...
+\end{align*}
 
 Diese Werte deuten stark auf ein divergentes Verhalten der Folge hin.
 
@@ -990,17 +924,16 @@ wenn diese Folge divergiert, folgt daraus, dass auch \(z_{n}\) divergent
 ist.
 
 Wir betrachten zunächst die Folge \(x_{n + 1} = {x_{n}}^{2}\) mit
+
 \(x_{0} = 2\).
 
-\[x_{0} = 2\]
-
-\[x_{1} = 2^{2} = 4\]
-
-\[x_{2} = 4^{2} = 16\]
-
-\[x_{3} = 16^{2} = 256\]
-
+\begin{align*}
+x_{0} &= 2\\
+x_{1} &= 2^{2} = 4\\
+x_{2} &= 4^{2} = 16\\
+x_{3} &= 16^{2} = 256\\
 ...
+\end{align*}
 
 Die Folge \(x_{n}\) kann explizit angegeben werden durch
 \(x_{n} = 2^{2^{n}}\).
@@ -1015,15 +948,7 @@ Rekursionsformel von \(z_{n}\) den zusätzlichen Term „+1``, wodurch die
 Folge \(z_{n}\) ab einem bestimmten Wert größer als \(x_{n}\) wird, da
 \(z_{n}\) schneller wächst. Somit gilt nach dem Minorantenkriterium für
 Folgen, dass \(z_{n}\) divergent ist und folglich ist \(c = 1\) kein
-Element der Mandelbrot-Menge.
-
-\[\blacksquare\]
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} \\
-\midrule()
-\endhead
-\bottomrule()
-\end{longtable}
+Element der Mandelbrot-Menge. \hfill\blacksquare
 
 Eine Visualisierung dieses Beispiels ist mit dem bisher genutzten
 GeoGebra Applet nicht mehr möglich, da die Skalierung in diesem Applet
