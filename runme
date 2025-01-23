@@ -1,0 +1,6 @@
+#!/bin/bash
+f=Buch
+lualatex $f && \
+bibtex $f && \
+lualatex $f && \
+lualatex $f
