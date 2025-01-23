@@ -546,11 +546,11 @@ Also ist die Folge \(z_{n}\) monoton steigend.
 \[z_{0} = 0.25 \leq 0.5\]
 \item Induktionsschritt:
 \begin{itemize}
-\item Induktionsannahme: \(\forall n \in \mathbb{N:}z_{n} \leq 0.5\)
+\item Induktionsannahme: \(\forall n \in \mathbb{N}:z_{n} \leq 0.5\)
 \item Induktionsbehauptung:
-\(\forall n \in \mathbb{N:}z_{n + 1} \leq 0.5\)
+\(\forall n \in \mathbb{N}:z_{n + 1} \leq 0.5\)
 \end{itemize}
-\[z_{n + 1} = {z_{n}}^{2} + 0.25 \leq {0.5}^{2} + 0.25 \leq 0.5\]
+\[z_{n + 1} = z_{n}^{2} + 0.25 \leq {0.5}^{2} + 0.25 \leq 0.5\]
 \end{itemize}
 Also ist die Folge \(z_{n}\) beschränkt durch 0.5.
 \end{enumerate}
@@ -567,8 +567,8 @@ dass \(a = 0.5\) wirklich der Grenzwert der Folge \(z_{n}\) ist.
 
 Ein weniger einfaches Beispiel für eine konvergente Folge ist
 \(\left( z_{n} \right)\) mit der Regel \(z_{n + 1} = z_{n}^{2} + c\) mit
-\(n \in \mathbb{N}_{0}\) und \(c =  - 0.5\), der Startwert ist dabei
-\(z_{0} =  - 0.5\). Auch diese Folge kann mit einem GeoGebra Applet
+\(n \in \mathbb{N}_{0}\) und \(c =  -0.5\), der Startwert ist dabei
+\(z_{0} =  -0.5\). Auch diese Folge kann mit einem GeoGebra Applet
 veranschaulicht werden.
 
 \begin{center}
@@ -580,39 +580,39 @@ veranschaulicht werden.
 % mittels GeoGebra (\url{https://www.geogebra.org/m/Npd3kBKn})
 
 Diese Abbildung legt die Vermutung nahe, dass die Folge konvergent ist
-und der Grenzwert \(a\) zwischen \(-\)0.5 und \(-\)0.25 liegt.
+und der Grenzwert \(a\) zwischen \(-0.5\) und \(-0.25\) liegt.
 
 
 Betrachtet man zunächst die ersten Folgenglieder:
 
 \begin{align*}
 z_{0} &=  - 0.5\\
-z_{1} &= ( - {0.5)}^{2} - 0.5 = 0.25 - 0.5 =  - 0.25\\
-z_{2} &= ( - {0.25)}^{2} - 0.5 =  - 0.4375\\
-z_{3} &= {( - 0.4375)}^{2} - 0.5 =  - 0.3085...\\
-z_{4} &= {( - 0.3085...)}^{2} - 0.5 =  - 0.4047...\\
-z_{5} &= {( - 0.4047...)}^{2} - 0.5 =  - 0.3361...\\
-z_{6} &= {( - 0.3361...)}^{2} - 0.5 =  - 0.3869...
+z_{1} &= ( - {0.5)}^{2} - 0.5 = 0.25 - 0.5 =  -0.25\\
+z_{2} &= ( - {0.25)}^{2} - 0.5 =  -0.4375\\
+z_{3} &= {( - 0.4375)}^{2} - 0.5 =  -0.3085...\\
+z_{4} &= {( - 0.3085...)}^{2} - 0.5 =  -0.4047...\\
+z_{5} &= {( - 0.4047...)}^{2} - 0.5 =  -0.3361...\\
+z_{6} &= {( - 0.3361...)}^{2} - 0.5 =  -0.3869...
 \end{align*}
 
-Diese Werte liegen zwischen \(-\)0.5 und \(-\)0.25 und scheinen sich
+Diese Werte liegen zwischen \(-0.5\) und \(-0.25\) und scheinen sich
 einem Wert zwischen diesen beiden anzunähern, wobei die Werte für
-\(n \in \mathbb{N}_{g}\) beginnend bei \(-\)0.5 monoton wachsend
+\(n \in \mathbb{N}_{g}\) beginnend bei \(-0.5\) monoton wachsend
 gegen einen Grenzwert und die Werte für \(n \in \mathbb{N}_{u}\)
-beginnend bei \(-\)0.25 monoton fallend gegen diesen Grenzwert zu
+beginnend bei \(-0.25\) monoton fallend gegen diesen Grenzwert zu
 streben scheinen.
 
 Wie nehmen an, dass die Folge \(\left( z_{n} \right)\) für
-\(z_{0} =  - 0.5\) einen Grenzwert \(a\) besitzt, wenn
+\(z_{0} =  -0.5\) einen Grenzwert \(a\) besitzt, wenn
 \(n \rightarrow \infty\).
 
-Dann muss gelten:
+Dann muss $(z_n)\to a$ gelten, falls $z_{n + 1} = z_{n}^{2} - 0.5$ und $n\to\infty$:
 
-\[z_{n + 1} = z_{n}^{2} - 0.5\overset{\Leftrightarrow}{\binom{n \rightarrow \infty}{\left( z_{n} \right) \rightarrow a}}a = a^{2} - 0.5 \Longleftrightarrow 0 = a^{2} - a - 0.5\]
+\[a = a^{2} - 0.5 \Longleftrightarrow 0 = a^{2} - a - 0.5\]
 
 Also gilt für den Grenzwert \(a\):
 
-\[a = \frac{1}{2} \pm \sqrt{\left( \frac{1}{2} \right)^{2} + 0.5} = \frac{1}{2} \pm \sqrt{\frac{3}{4}} = \frac{1 \pm \sqrt{3}}{2}\]
+\[a = \frac{1}{2} \pm \sqrt{\left( \frac{1}{2} \right)^{2} + 0.5} = \frac{1}{2} \pm \sqrt{\frac{3}{4}} = \frac{1 \pm \sqrt{3}}{2}.\]
 
 Das heißt, die Fixpunkte der rekursiv definierten Folge und somit die
 möglichen Grenzwerte der Folge \(\left( z_{n} \right)\) für
@@ -629,138 +629,95 @@ Seien \(x_{n}\) und \(y_{n}\) Teilfolgen von \(z_{n}\), wobei
 Betrachten wir die Folge \(x_{n}\).
 
 \begin{align*}
-x_{0} &= z_{0} =  - 0.5\\
-x_{1} &= z_{2} = {z_{1}}^{2} - 0.5 = ({z_{0}}^{2} - 0.5)^{2} - 0.5 = {x_{0}}^{4} - {x_{0}}^{2} - 0.25\\
-x_{2} &= z_{4} = {z_{3}}^{2} - 0.5 = ({z_{2}}^{2} - 0.5)^{2} - 0.5 = {x_{1}}^{4} - {x_{1}}^{2} - 0.25\\
-x_{3} &= z_{6} = {z_{5}}^{2} - 0.5 = ({z_{4}}^{2} - 0.5)^{2} - 0.5 = {x_{2}}^{4} - {x_{2}}^{2} - 0.25\\
-... &\\
-x_{n + 1} &= {x_{n}}^{4} - {x_{n}}^{2} - 0.25
+x_{0} &= z_{0} =  -0.5\\
+x_{1} &= z_{2} = z_{1}^{2} - 0.5 = (z_{0}^{2} - 0.5)^{2} - 0.5 = x_{0}^{4} - {x_{0}}^{2} - 0.25\\
+x_{2} &= z_{4} = z_{3}^{2} - 0.5 = (z_{2}^{2} - 0.5)^{2} - 0.5 = x_{1}^{4} - {x_{1}}^{2} - 0.25\\
+x_{3} &= z_{6} = z_{5}^{2} - 0.5 = (z_{4}^{2} - 0.5)^{2} - 0.5 = x_{2}^{4} - {x_{2}}^{2} - 0.25\\
+&\vdotswithin{=} \\
+x_{n + 1} &= x_{n}^{4} - x_{n}^{2} - 0.25
 \end{align*}
 
 Um Konvergenz der Folge \(x_{n}\) beweisen zu können, müssen wir zeigen,
 dass \(x_{n}\) sowohl beschränkt als auch monoton im Intervall
-\(- 0.5{\leq x}_{n} \leq  - 0.25\) ist. Das zeigen wir durch
-vollständige Induktion über n.
+\(- 0.5\leq x_{n} \leq  - 0.25\) ist. Das zeigen wir durch
+vollständige Induktion über $n$.
 
-\begin{quote}
-z. z. \(x_{n}\) ist beschränkt und monoton
+z.~z.~\(x_{n}\) ist beschränkt und monoton.
 
-Induktionsanfang (\(n = 0\)):
-\end{quote}
-
+\begin{itemize}
+\item Induktionsanfang (\(n = 0\)):
 \[- 0.5 \leq  - 0.5 \leq  - 0.25\]
-
-\[{{- 0.4375 = x}_{1} > x}_{0} =  - 0.5\]
-
-\begin{quote}
-Induktionsschritt:
-
-Induktionsannahme:
-\(\forall n \in \mathbb{N:} - 0.5{\leq x}_{n} \leq  - 0.25\)
+und
+\[{- 0.4375 = x_{1} > x}_{0} =  -0.5\]
+\item Induktionsschritt:
+\begin{itemize}
+\item Induktionsannahme:
+\(\forall n \in \mathbb{N}: -0.5\leq x_{n} \leq  - 0.25\)
 und \(x_{n + 1} > x_{n}\)
-
-Induktionsbehauptung:
-\(\forall n \in \mathbb{N:} - 0.5{\leq x}_{n + 1} \leq  - 0.25\)
+\item Induktionsbehauptung:
+\(\forall n \in \mathbb{N} -0.5\leq x_{n + 1} \leq  - 0.25\)
 und \(x_{n + 2} > x_{n + 1}\)
-\end{quote}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
-\item
-  Monotonie:
-\end{enumerate}
-
-\begin{quote}
-z.z. für \(- 0.5{\leq x}_{n} \leq  - 0.25\) ist
+\item  Monotonie:
+z.~z.~für \(-0.5\leq x_{n} \leq  -0.25\) ist
 \(x_{n + 1} > x_{n}\) bzw. \(x_{n + 1} - {x}_{n} > 0\)
-\end{quote}
 
-\[f(x) = x^{4} - x^{2} - x - 0.25\]
-
-\begin{quote}
+Sei \(f(x) = x^{4} - x^{2} - x - 0.25\).
 Wir untersuchen nun, wann \(f(x) > 0\) gilt. Hierzu lösen wir die
-Ungleichung im Intervall \(- 0.5{\leq x}_{n} \leq  - 0.25\).
-\end{quote}
+Ungleichung im Intervall \(- 0.5\leq x_{n} \leq  - 0.25\):
+\begin{align*}
+f(x) &> 0\\
+x^{4} - x^{2} - x - 0.25 &> 0\\
+4x^{4} - 4x^{2} - 4x - 1 &> 0\\
+4x^{4} - 4x^{3} + 4x^{3} - 2x^{2} - 4x^{2} + 2x^{2} - 2x - 2x - 1&> 0\\
+2x^{2} \cdot (2x^{2} - 2x - 1) + 2x \cdot (2x^{2} - 2x - 1) + 2x^{2} - 2x - 1 &> 0\\
+(2x^{2} - 2x - 1) \cdot (2x^{2} + 2x + 1) &> 0
+\end{align*}
 
-\[f(x) > 0\]
-
-\[x^{4} - x^{2} - x - 0.25 > 0\]
-
-\[4x^{4} - {4x}^{2} - 4x - 1 > 0\]
-
-\[4x^{4} - {4x}^{3} + {4x}^{3} - {2x}^{2} - {4x}^{2} + {2x}^{2} - 2x - 2x - 1 > 0\]
-
-\[2x^{2} \bullet ({2x}^{2} - 2x - 1) + 2x \bullet ({2x}^{2} - 2x - 1) + {2x}^{2} - 2x - 1 > 0\]
-
-\[{(2x}^{2} - 2x - 1) \bullet ({2x}^{2} + 2x + 1) > 0\]
-
-\begin{quote}
 Fallunterscheidung:
-\end{quote}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \item
-  Fall:
-\end{enumerate}
-
-\[{2x}^{2} - 2x - 1 > 0;{2x}^{2} + 2x + 1 > 0\]
-
-\begin{quote}
-Wir lösen zunächst die Ungleichung \({2x}^{2} - 2x - 1 > 0\):
-\end{quote}
-
-\[{2x}^{2} - 2x - 1 > 0\]
-
-\[{2x}^{2} - 2x - 1 = 0\]
-
-\[x_{1,2} = \frac{1}{2} \pm \sqrt{\left( \frac{1}{2} \right)^{2} + 0.5} = \frac{1}{2} \pm \sqrt{\frac{3}{4}} = \frac{1 \pm \sqrt{3}}{2}\]
-
-\[{2x}^{2} - 2x - 1 = 2 \bullet (x - \frac{1 + \sqrt{3}}{2}) \bullet (x - \frac{1 - \sqrt{3}}{2}) > 0\]
-
-\[(x - \frac{1 + \sqrt{3}}{2}) \bullet (x - \frac{1 - \sqrt{3}}{2}) > 0\]
-
-\[(x - \frac{1 + \sqrt{3}}{2}) > 0 \land (x - \frac{1 - \sqrt{3}}{2}) > 0\]
-
-\begin{quote}
+  1.~Fall:
+\[2x^{2} - 2x - 1 > 0\;\land\;2x^{2} + 2x + 1 > 0\]
+Wir lösen zunächst die Ungleichung \(2x^{2} - 2x - 1 > 0\):
+\[2x^{2} - 2x - 1 > 0\]
+Da die Nullstellen der Gleichung $2x^{2} - 2x - 1 = 0$
+\begin{align*}
+x_{1,2} &= \frac{1}{2} \pm \sqrt{\left( \frac{1}{2} \right)^{2} + 0.5}
+= \frac{1}{2} \pm \sqrt{\frac{3}{4}} = \frac{1 \pm \sqrt{3}}{2}
+\end{align*}
+sind, gilt
+\begin{align*}
+2x^{2} - 2x - 1 = 2 \cdot \left(x - \frac{1 + \sqrt{3}}{2}\right) \cdot \left(x - \frac{1 - \sqrt{3}}{2}\right) &> 0\\
+\left(x - \frac{1 + \sqrt{3}}{2}\right) \cdot \left(x - \frac{1 - \sqrt{3}}{2}\right) &> 0
+\end{align*}
+d.~h.
+\[x - \frac{1 + \sqrt{3}}{2} > 0 \;\land\; x - \frac{1 - \sqrt{3}}{2} > 0\]
 oder
-\end{quote}
-
-\[(x - \frac{1 + \sqrt{3}}{2}) < 0 \land (x - \frac{1 - \sqrt{3}}{2}) < 0\]
-
-\begin{quote}
+\[x - \frac{1 + \sqrt{3}}{2} < 0 \;\land\; x - \frac{1 - \sqrt{3}}{2} < 0\]
 Also:
-\end{quote}
-
 \[x > \frac{1 + \sqrt{3}}{2} \land x > \frac{1 - \sqrt{3}}{2}\]
-
-\begin{quote}
 oder
-\end{quote}
-
 \[x < \frac{1 + \sqrt{3}}{2} \land x < \frac{1 - \sqrt{3}}{2}\]
-
-\begin{quote}
 Somit folgt für die Lösungsmenge:
-\end{quote}
-
-\[x \in \left\langle  - \infty,\frac{1 - \sqrt{3}}{2} \right\rangle \cup \left\langle \frac{1 + \sqrt{3}}{2},\infty \right\rangle\]
-
-\begin{quote}
-Nun betrachten wir noch die zweite Ungleichung des 1. Falls:
-\end{quote}
-
-\[{2x}^{2} + 2x + 1 > 0\]
-
-\begin{quote}
+\[x \in \left(  - \infty,\frac{1 - \sqrt{3}}{2} \right) \cup \left( \frac{1 + \sqrt{3}}{2},\infty \right)\]
+Nun betrachten wir noch die zweite Ungleichung des 1.~Falls:
+\[2x^{2} + 2x + 1 > 0\]
 Diese Ungleichung ist für alle \(x\mathbb{ \in R}\) erfüllt.
 
-Somit ist die Lösungsmenge für den 1. Fall:
-\end{quote}
+Somit ist die Lösungsmenge für den 1.~Fall:
 
-\[x \in (\left\langle  - \infty,\frac{1 - \sqrt{3}}{2} \right\rangle \cup \left\langle \frac{1 + \sqrt{3}}{2},\infty \right\rangle) \cap x\mathbb{ \in R}\]
-
-\[x \in \left\langle  - \infty,\frac{1 - \sqrt{3}}{2} \right\rangle \cup \left\langle \frac{1 + \sqrt{3}}{2},\infty \right\rangle\]
+\[x \in \left(\left(  - \infty,\frac{1 - \sqrt{3}}{2} \right) \cup
+\left( \frac{1 + \sqrt{3}}{2},\infty \right)\right) \cap x\in\mathbb{R}\]
+Zusammengefasst:
+\[x \in \left(  - \infty,\frac{1 - \sqrt{3}}{2} \right) \cup
+\left( \frac{1 + \sqrt{3}}{2},\infty \right)\]
+\end{enumerate}
+\end{enumerate}
+\end{itemize}
+\end{itemize}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
